@@ -16,7 +16,7 @@ const Home = () => {
         setLoading(true)
         const data = await axios.get('https://webscrapping-backend.vercel.app/data/get-sitemap', {
             params: {
-                domain: domain
+                domain: domain.trim()
             }
         })
         // console.log(data.data);
