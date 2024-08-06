@@ -14,7 +14,7 @@ const Home = () => {
     e.preventDefault();
     try {
         setLoading(true)
-        const data = await axios.get('http://localhost:5000/data/get-sitemap', {
+        const data = await axios.get('https://webscrapping-backend.vercel.app/data/get-sitemap', {
             params: {
                 domain: domain
             }
@@ -22,7 +22,7 @@ const Home = () => {
         // console.log(data.data);
         setLoadingContent("Fetching Data...")
         
-        const siteData = await axios.get(`http://localhost:5000/data/scrap-xml`, {
+        const siteData = await axios.get(`https://webscrapping-backend.vercel.app/data/scrap-xml`, {
             params: {
               url: data.data,
             },
@@ -34,7 +34,7 @@ const Home = () => {
   
           for (let i = 0; i < siteData.data.length; i++) {
             const summary = await axios.get(
-              `http://localhost:5000/data/summarize`,
+              `https://webscrapping-backend.vercel.app/data/summarize`,
               {
                 params: {
                   url: siteData.data[i].loc,
