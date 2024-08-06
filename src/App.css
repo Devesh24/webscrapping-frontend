@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #021526;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 35vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search{
+    outline: none;
+    border: 2px solid #f4f4c9e2;
+    width: 70%;
+    height: 60px;
+    border-radius: 30px;
+    padding: 0.5rem 2rem;
+    font-size: medium;
+    background-color: #e2e2b6e1;
+    box-shadow: 0 0 10px #e2e2b679;
 }
 
-.App-link {
-  color: #61dafb;
+.submitBtn{
+    border-radius: 30px;
+    font-size: medium;
+    background-color: #034b9e31;
+    border: 2px solid #023065af;
+    box-shadow: 0 0 10px #012e62d5;
+    color: white;
+    padding: 0.5rem 2rem;
+    height: 60px;
+    transition: transform 0.2s ease-in-out;
+}
+.submitBtn:enabled:hover{
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.products{
+    width: 100%;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
+}
+
+.card{
+    width: 45%;
+    min-width: 660px;
+    max-width: 760px;
+    height: 45vh;
+    background-color: #034b9e31;
+    border: 2px solid #023065af;
+    box-shadow: 0 0 10px #012e62d5;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: box-shadow 0.2s ease;
+}
+.card:hover{
+    box-shadow: 0 0 15px #013c7fd5;
+}
+
+.productImg{
+    width: 40%;
+    height: 90%;
+}
+.productImg img{
+    width: 100%;
+    height: 100%;
+}
+
+.productDetails{
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.title{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.list{
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.list li{
+    font-size: medium;
+}
+
+.loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 2rem;
+    font-size: larger;
+}
+
+
+@media only screen and (max-width: 720px) {
+    .products{
+        padding: 0 2rem;
+        padding-bottom: 3rem;
+    }
+    .card{
+        width: 100%;
+        max-width: fit-content;
+        min-width: 0;
+        height: fit-content;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    form{
+        width: 90%;
+        height: 30vh;
+    }
+    .submitBtn{
+        padding: 0.5rem 1rem;
+    }
+    .card{
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    .productDetails, .productImg{
+        width: 100%;
+    }
 }
